@@ -1,0 +1,8 @@
+Dear {{first-name}},
+
+Thank you for submitting your application.
+
+You will receive a response by 11:59pm on March 11th, 2020.
+
+Regards,
+Company & Co.

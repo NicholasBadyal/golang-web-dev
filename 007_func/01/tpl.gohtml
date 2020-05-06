@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>functions</title>
+</head>
+<body>
+	<ul>
+	{{range .Docs}}
+	<li>{{uc .Name}} - {{ft .Name}}</li>
+	{{end}}
+	</ul>
+
+	<ul>
+	{{range .Cars}}
+	<li>{{uc .Make}}, {{ft .Model}}, {{.Year}}</li>
+	{{end}}
+	</ul>
+</body>
+</html>
