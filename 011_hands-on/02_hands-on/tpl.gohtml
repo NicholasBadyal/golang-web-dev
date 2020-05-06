@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cali Hotels</title>
+</head>
+<body>
+    {{range .}}
+    {{.Name}}
+    {{.Addr}}, {{.City}},
+    {{reg2str .Region}}, {{.Zip}}
+    {{end}}
+</body>
+</html>

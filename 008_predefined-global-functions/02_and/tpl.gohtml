@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>predefined global functions</title>
+</head>
+<body>
+
+EXAMPLE #1
+{{range .}}
+	EX1: {{.}}
+{{end}}
+
+EXAMPLE #2
+{{if .}}
+	EX2: {{.}}
+{{end}}
+
+EXAMPLE #3
+{{range .}}
+	{{if .Name}}
+		EX3: {{.Name}}
+	{{end}}
+{{end}}
+
+EXAMPLE #4
+{{range .}}
+	{{if and .Name .Admin}}
+		EX4: {{.Name}}, {{.Age}}, {{.Admin}}
+	{{end}}
+{{end}}
+
+</body>
+</html>
