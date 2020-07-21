@@ -9,25 +9,25 @@ import (
 	"text/template"
 )
 
-type data struct{
-	Date string
-	Open string
-	High string
-	Low string
-	Close string
-	Volume string
+type data struct {
+	Date     string
+	Open     string
+	High     string
+	Low      string
+	Close    string
+	Volume   string
 	AdjClose string
 }
 
 var tpl *template.Template
 
-func init(){
+func init() {
 	tpl = template.Must(template.ParseGlob("*.gohtml"))
 }
 
-func main(){
+func main() {
 	csvFile, err := os.Open("scratch.csv")
-	if err != nil{
+	if err != nil {
 		log.Fatalln(err)
 	}
 	defer csvFile.Close()
@@ -37,8 +37,8 @@ func main(){
 	csvr := csv.NewReader(csvFile)
 	for {
 		row, err := csvr.Read()
-		if err != nil{
-			if err == io.EOF{
+		if err != nil {
+			if err == io.EOF {
 				break
 			} else {
 				log.Fatalln(err)
@@ -58,7 +58,7 @@ func main(){
 	}
 
 	err = tpl.Execute(os.Stdout, datapts)
-	if err != nil{
+	if err != nil {
 		log.Fatalln(err)
 	}
 }

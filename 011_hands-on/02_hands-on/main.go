@@ -14,11 +14,11 @@ const (
 	Northern
 )
 
-type Hotel struct{
-	Name string
-	Addr string
-	City string
-	Zip string
+type Hotel struct {
+	Name   string
+	Addr   string
+	City   string
+	Zip    string
 	Region region
 }
 
@@ -27,8 +27,8 @@ var fm = template.FuncMap{
 	"reg2str": regionToString,
 }
 
-func regionToString(r region) string{
-	if r > 2 || r < 0{
+func regionToString(r region) string {
+	if r > 2 || r < 0 {
 		return "None"
 	}
 	return []string{
@@ -38,11 +38,11 @@ func regionToString(r region) string{
 	}[r]
 }
 
-func init(){
+func init() {
 	tpl = template.Must(template.New("").Funcs(fm).ParseFiles("tpl.gohtml"))
 }
 
-func main(){
+func main() {
 	hotels := []Hotel{
 		{
 			Name:   "The Ritz",
@@ -68,7 +68,7 @@ func main(){
 	}
 
 	err := tpl.ExecuteTemplate(os.Stdout, "tpl.gohtml", hotels)
-	if err != nil{
+	if err != nil {
 		log.Fatalln(err)
 	}
 }

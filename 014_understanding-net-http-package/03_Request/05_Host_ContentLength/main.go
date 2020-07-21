@@ -16,12 +16,12 @@ func (m hotdog) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	}
 
 	data := struct {
-		Method      	string
-		URL         	*url.URL
-		Submissions 	map[string][]string
-		Header			http.Header
-		Host			string
-		ContentLength	int64
+		Method        string
+		URL           *url.URL
+		Submissions   map[string][]string
+		Header        http.Header
+		Host          string
+		ContentLength int64
 	}{
 		req.Method,
 		req.URL,

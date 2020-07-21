@@ -19,7 +19,7 @@ func (m hotdog) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		Method      string
 		URL         *url.URL
 		Submissions map[string][]string
-		Header		http.Header
+		Header      http.Header
 	}{
 		req.Method,
 		req.URL,

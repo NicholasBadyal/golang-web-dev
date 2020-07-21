@@ -8,27 +8,27 @@ import (
 
 var tpl *template.Template
 
-type course struct{
+type course struct {
 	Number string
-	Name string
-	Units string
+	Name   string
+	Units  string
 }
 
-type semester struct{
-	Term string
+type semester struct {
+	Term    string
 	Courses []course
 }
 
-type year struct{
-	AcademicYear string
+type year struct {
+	AcademicYear         string
 	Fall, Spring, Summer semester
 }
 
-func init(){
+func init() {
 	tpl = template.Must(template.ParseGlob("tpl.gohtml"))
 }
 
-func main(){
+func main() {
 	years := []year{
 		{
 			AcademicYear: "2018",
@@ -62,8 +62,8 @@ func main(){
 					},
 					{
 						Number: "MA107001",
-						Name: "Calculus 1",
-						Units: "3",
+						Name:   "Calculus 1",
+						Units:  "3",
 					},
 				},
 			},
@@ -71,12 +71,12 @@ func main(){
 		{
 			AcademicYear: "2019",
 			Summer: semester{
-				Term:    "Summer19",
+				Term: "Summer19",
 				Courses: []course{
 					{
 						Number: "CS250000",
-						Name: "Systems Programming in C++",
-						Units: "5",
+						Name:   "Systems Programming in C++",
+						Units:  "5",
 					},
 				},
 			},
@@ -84,8 +84,7 @@ func main(){
 	}
 
 	err := tpl.Execute(os.Stdout, years)
-	if err != nil{
+	if err != nil {
 		log.Fatalln(err)
 	}
 }
-

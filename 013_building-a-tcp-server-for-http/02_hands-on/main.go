@@ -1,11 +1,11 @@
 package main
 
 import (
-"bufio"
-"fmt"
-"log"
-"net"
-"strings"
+	"bufio"
+	"fmt"
+	"log"
+	"net"
+	"strings"
 )
 
 func main() {
@@ -41,8 +41,8 @@ func request(conn net.Conn) {
 		fmt.Println(ln)
 		if i == 0 {
 			header := strings.Fields(ln)
-			m := header[0]	// method
-			u := header[1]	// uri
+			m := header[0] // method
+			u := header[1] // uri
 			fmt.Println("***METHOD", m)
 			fmt.Println("***URI", u)
 		}
